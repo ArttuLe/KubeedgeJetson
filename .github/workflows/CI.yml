@@ -34,6 +34,6 @@ jobs:
       run: |        
         docker buildx build \        
           --platform ${{ steps.prepare.outputs.docker_platform }} \        
-          --tag ${{ steps.prepare.outputs.docker_image }}:v.0.${{ steps.prepare.outputs.version }} \        
-          --file ./Dockerfile \        
-          --output type=image,push=true .
+          --tag ${{ steps.prepare.outputs.docker_image }}:arm64v8-${{ steps.prepare.outputs.version }} \   
+          --push \
+          .
