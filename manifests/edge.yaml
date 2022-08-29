@@ -7,7 +7,7 @@ spec:
   terminationGracePeriodSeconds: 30
   containers:  
     - name: edge-app
-      image: arskale/edgerepo01:arm64v8-9
+      image: arskale/edgerepo01:arm64v8-0
       imagePullPolicy: "Always"
       securityContext:
         privileged: true
