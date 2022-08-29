@@ -1,9 +1,11 @@
 FROM arm64v8/python:3.7-slim-buster
-
+USER root
 WORKDIR /app
 
 RUN echo "BUILD MODULE: Edge Impulse Camera Detect"
 RUN apt-get update -y && apt-get install -y gcc
+RUN apt-get install ffmpeg libsm6 libxext6 -y
+RUN pip3 install minio
 RUN apt install -y portaudio19-dev
 RUN pip3 install edge_impulse_linux -i https://pypi.python.org/simple
 RUN pip3 install opencv-python-headless==4.5.3.56
